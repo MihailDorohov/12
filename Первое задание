@@ -1,0 +1,42 @@
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <time.h> 
+#include <limits.h> 
+
+#define M 10 
+#define N 10 
+
+int main() 
+{ 
+  int a[N][M]; 
+  int b[N]; 
+  int i, y; 
+
+  for(i = 0; i < M; i++) 
+  for(y = 0; y < N; y++) 
+  a[i][y] = rand()%100; 
+
+  for(i = 0; i < N; i++)
+  { 
+    int min = INT_MAX; 
+    for(y = 0; y < M; y++) 
+   { 
+    if(a[y][i] < min) 
+     { 
+      min = a[y][i]; 
+      b[i] = a[y][i]; 
+     } 
+    } 
+   } 
+
+for(i = 0; i < M; i++)
+  { 
+  for(y = 0; y < N; y++) 
+  printf("%5d", a[i][y]); 
+  printf("\n"); 
+  } 
+
+  for(i = 0; i < N; i++)
+  printf("%d\n", b[i]);
+  returne 0;
+}
